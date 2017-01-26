@@ -79,10 +79,6 @@ cz.mzk.image.viewer.Main.prototype.initMap = function() {
       maxZoom: source.getTileGrid().getMaxZoom() - 1
     }),
     controls: [
-      new ol.control.OverviewMap({
-        collapsed: false,
-        collapsible: false
-      }),
       new ol.control.Zoom(),
       new ol.control.FullScreen()
     ]
