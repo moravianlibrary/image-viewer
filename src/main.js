@@ -65,6 +65,13 @@ cz.mzk.image.viewer.Main.prototype.initMap = function() {
     crossOrigin: 'anonymous'
   });
 
+  var mapContainer = goog.dom.getElement('ol-image');
+  var mapWidth = mapContainer.clientWidth;
+  var mapHeight = mapContainer.clientHeight;
+
+  var wRes = this.width/mapWidth;
+  var hRes = this.height/mapHeight;
+
   this.map = new ol.Map({
     layers: [
       new ol.layer.Tile({
@@ -75,8 +82,9 @@ cz.mzk.image.viewer.Main.prototype.initMap = function() {
     view: new ol.View({
       projection: this.projection,
       center: imgCenter,
-      zoom: 1,
-      maxZoom: source.getTileGrid().getMaxZoom() - 1
+      maxResolution: Math.max(wRes, hRes),
+      minResolution: (Math.max(this.width, this.height) / 256) / Math.pow(2, source.getTileGrid().getMaxZoom()),
+      extent: [0, -this.height, this.width, 0]
     }),
     controls: [
       new ol.control.Zoom(),
