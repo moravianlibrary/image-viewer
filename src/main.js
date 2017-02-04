@@ -89,8 +89,9 @@ cz.mzk.image.viewer.Main.prototype.initMap = function() {
 cz.mzk.image.viewer.Main.prototype.fit = function() {
     var ext = this.projection.getExtent();
     var size = this.map.getSize();
-    var nresolution = ext[3]/(size[1]-20);
-    this.map.getView().setResolution(nresolution);
+    var wRes = ext[2]/size[0];
+    var hRes = ext[3]/size[1];
+    this.map.getView().setResolution(Math.max(wRes, hRes));
     this.map.getView().setCenter([ext[2]/2, -ext[3]/2]);
 }
 
