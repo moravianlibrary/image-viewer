@@ -1,10 +1,14 @@
 goog.provide('cz.mzk.image.viewer.Main');
 
 goog.require('ol.Map');
-goog.require('ol.control.OverviewMap');
+goog.require('ol.View');
+goog.require('ol.proj.Projection');
+goog.require('ol.source.Zoomify');
+goog.require('ol.layer.Tile');
 goog.require('ol.control.Zoom');
 goog.require('ol.control.FullScreen');
 
+goog.require('goog.dom');
 goog.require('goog.net.XhrIo');
 
 

@@ -20,6 +20,7 @@
       "ol.ENABLE_WEBGL=true"
     ],
     "js": [
+      "node_modules/openlayers/src/ol/typedefs.js",
       "node_modules/openlayers/externs/olx.js",
       "node_modules/openlayers/externs/oli.js"
     ],

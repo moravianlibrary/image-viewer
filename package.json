@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/moravianlibrary/image-viewer#readme",
   "dependencies": {
-    "openlayers": "v3.16.0"
+    "openlayers": "v4.0.1"
   }
 }
